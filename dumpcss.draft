@@ -1,0 +1,194 @@
+(function($w){
+ 'use strict';
+ function dummy(){}
+ function capitalize(t){var s=t;return s.charAt(0).toUpperCase()+s.slice(1);}
+ function walkObject(a,b){var f=b,g=function(x,n){var e,p,o=x,i=n;for(p in o){g(e=o[p],i);f(e,o,p,i+1);};};g(a,0);return a;};//obj,callback(val,obj,prop,depth)
+
+//function nString(a,b){var n=a,s=b,t='';if(n!==0){if(n>1){while(n>0){if(n%2===1){t+=s};s+=s;n>>=1;};}else{t=n<=0?'':s};};return t;};
+
+ var w=(function($){
+  var o=$,p='console',e=o[p],f=e?function(o,s,t){var c=e,x=c[s];o[t]=function(){x.apply(c,arguments);};}:(e=o[p]={},function(o,s,t){o[t]=dummy;});
+  p='log';f(o,p,p);
+  p='dir';f(o,p,p);
+  p='group';[p,p+'End',p+'Collapsed','info','clear'].forEach(function(s){f(o,s,'log'+capitalize(s));});
+  o.inspect=function(s,o){var c=e;c.group(s);c.dir(o);c.groupEnd();};
+  return o;
+ })($w),
+
+ $d=w.document,
+ call=w.Function.call,
+ Slice=call.bind(w.Array.prototype.slice),
+ Obj=w.Object,
+ Create=Obj.create,
+ CreateRawObject=call.bind(Create,null,null),
+ SetPrototypeOf=Obj.setPrototypeOf,
+ CreateRawArray=function(){return SetPrototypeOf([],null);},
+ end;
+
+ call=Create=Obj=null;
+
+
+
+
+
+
+
+
+
+
+
+
+
+ var cssOf=function(aDoc){
+
+	 var i=CreateRawArray,c=CreateRawObject,f=function(){var o={},m=arguments,i=m.length+0,e;while(i--){e=m[i];o[e[0]]={value:e[1],enumerable:true,writable:true};};return c(o);};
+	 c=f([
+		'sheets',f(
+		 ['external',f(
+			['linked',i()],
+			['imported',f(
+			 ['fromLinked',i()],
+			 ['fromImported',i()],
+			 ['fromEmbedded',i()]
+			)]
+		 )],
+		 ['internal',f(
+			['embedded',i()],
+			['inlined',i()]
+		)])
+	 ]);
+
+	 //...
+
+	return walkObject(c,function(x,o,p){var e=x;if(typeof(e)==='object' && 'length' in e && e.length===0){o[p]=null;};});
+ },
+ cssfounded=cssOf($d);
+
+
+/*
+
+
+	var u=undefined,
+	toArray=Slice,
+	d=aDoc,
+	found={
+		sheets:null,
+		inline:d.querySelectorAll('[style]')//elementsWithStyleAttribute, NodeList
+	},
+	w=d.defaultView,
+	sheets=toArray(d.styleSheets);
+	if(sheets.length!==0){
+		//...
+	};
+*/
+
+
+inspect('found:',cssfounded);
+
+
+
+
+})(window);
+/*
+dir({});
+log(1);
+logGroup(2);
+log(21);
+logGroupEnd();
+logGroupCollapsed(3);
+log(31);
+logGroupEnd();
+logInfo();
+log(JSON.stringify(---,null,' '));
+*/
+
+
+
+/*
+(function($){}();
+(function($x){var $=$x;return;}();
+
+
+
+
+
+
+
+dir(document.getElementsByTagName('*'))
+*/
+
+
+
+
+
+
+
+
+/*
+dir(window.zz=getElementsWithAttribute('src'));
+
+dir(window.zz)
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+(function(win){
+})(window);
+
+
+/*function(win){};
+
+
+var len = nodes.length;
+while(nodes[--len]);
+
+
+ matchMedia=w.matchMedia,
+ csstypes=constant.CssRuleTypes.Index,
+ sheet,rules, rule, i, ruleSheet, ruleMedia, //parentSheet,
+
+ slot,
+
+ rulesOf=function(x){var e=x;return (e===u||e.disabled===true)?0:toArray(e.cssRules);},
+
+ end;
+
+ while((sheet=sheets.shift())!==u){
+ };
+
+	if((rules=rulesOf(sheet))!==0){
+	 while((rule=rules.shift())!==u){
+		i=rule.type;
+		if(i===5||i===6||i===7||i===10){
+			slot=found[i]||(found[i]=[]);
+			slot[slot.length]=rule;
+		}else{
+
+
+
+
+		};
+
+
+
+
+
+	 };
+	};
+
+
+
+
+
+*/
